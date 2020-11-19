@@ -55,6 +55,9 @@ namespace Retegan_Alexandru_Lab6
 
             ctx.Orders.Load();
             ctx.Inventories.Load();
+            System.Windows.Data.CollectionViewSource inventoryViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("inventoryViewSource")));
+
+            
             cmbCustomers.ItemsSource = ctx.Customers.Local;
             //cmbCustomers.DisplayMemberPath = "FirstName";
             cmbCustomers.SelectedValuePath = "CustId";
@@ -64,7 +67,7 @@ namespace Retegan_Alexandru_Lab6
             // Load data by setting the CollectionViewSource.Source property:
             // customerViewSource.Source = [generic data source]
             BindDataGrid();
-            System.Windows.Data.CollectionViewSource inventoryViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("inventoryViewSource")));
+           
             // Load data by setting the CollectionViewSource.Source property:
             // inventoryViewSource.Source = [generic data source]
         }
